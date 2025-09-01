@@ -31,7 +31,7 @@
     "metadata-redux": "2.0.36-beta.2",
     "url-join": "^5.0",
     "wb-core": "github:oknosoft/windowbuilder-core#a0a451bffc399f3491b8d6187b69bc72a1077e85",
-    "wb-forms": "github:oknosoft/windowbuilder-forms#b0ef484d4147ddb48d25de541b6ee97a4845d9a7",
+    "wb-forms": "github:oknosoft/windowbuilder-forms#fac95359019753435c41fcb35231c6b9b373f95a",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {

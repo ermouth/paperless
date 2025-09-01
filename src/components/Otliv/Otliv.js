@@ -4,20 +4,18 @@ import Grid from '@material-ui/core/Grid';
 import {withIface} from 'metadata-redux';
 import Builder from '../Builder';
 import Props from '../Props/Main';
-import Crooked from './Crooked';
+import Params from './Params';
 import withStyles, {WorkPlace, WorkPlaceFrame} from '../App/WorkPlace';
 
 class Otliv extends WorkPlace {
-
+  // 46e84fa0-8280-11f0-b343-1b7cf6ad6e51
   barcodeFin(bar) {
     const {state: {full_picture}, editor: {project}} = this;
     const {cnstr, ox} = bar;
     console.log(bar)
-    project.load(ox, {auto_lines: true, custom_lines: true, unfolding: true, redraw: true})
+    project.load(ox, {auto_lines: false, custom_lines: true, unfolding: true, redraw: true})
       .then(() => {
-        //if(full_picture) return;
-        //46e84fa0-8280-11f0-b343-1b7cf6ad6e51
-
+        // if(full_picture) return;
         clearTimeout(project._attr._vis_timer);
         project.zoom_fit();
         this.setState(bar);
@@ -32,10 +30,13 @@ class Otliv extends WorkPlace {
         <Builder registerChild={this.registerEditor}/>
       </Grid>
       <Grid item sm={12} md={full_picture ? 3 : 4} className={classes.props}>
-        <Props {...this.state} show_spec={false} changeFull={this.changeFull}/>
-        {ox && ox.empty && !ox.empty() ? <Crooked {...this.state}/> : null}
+        <Props {...this.state} style={{marginTop:'1em'}} show_spec={false} changeFull={this.changeFull}/>
+        {ox && ox.empty && !ox.empty() ? <Params {...this.state}/> : null}
         {comment ? <div style={{marginTop:'1.5em'}}>⚠️ Коммент: {comment}</div> : null}
       </Grid>
+      <style>{
+       `.MuiTableCell-root{border-bottom:none;}`
+     }</style>
     </WorkPlaceFrame>;
   }
 }
