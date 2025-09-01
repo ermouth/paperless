@@ -28,6 +28,7 @@ import Welding from '../Welding';             // сварка
 import Falsebinding from '../Falsebinding';   // фальшпереплёты
 import Facing from '../Facing';               // раскладка
 import Crackers from '../Crackers';           // раскладка
+import Otliv from '../Otliv';                 // водоотливы
 import Arc from '../Arc';                     // арки, трапеции
 import Monitor from '../Monitor';             // статистика сканирований
 
@@ -169,6 +170,7 @@ class AppView extends Component {
             <Route path="/falsebinding" render={(props) => wraper(Falsebinding, props)}/>
             <Route path="/facing" render={(props) => wraper(Facing, props)}/>
             <Route path="/crackers" render={(props) => wraper(Crackers, props)}/>
+            <Route path="/otliv" render={(props) => wraper(Otliv, props)}/>
             <Route path="/arc" render={(props) => wraper(Arc, props)}/>
             <Route path="/login" render={(props) => <Login {...props} {...auth_props} />}/>
             <Route path="/settings" render={(props) => wraper(Settings, props)}/>

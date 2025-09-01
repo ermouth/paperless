@@ -79,6 +79,14 @@ const items = [
     need_user: true,
   },
   {
+    text: 'Водоотливы',
+    title: 'Пр-во отливов',
+    id: 'otliv',
+    navigate: '/otliv',
+    need_meta: true,
+    need_user: true,
+  },
+  {
     divider: true,
   },
   {
