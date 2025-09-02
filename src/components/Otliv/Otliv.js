@@ -13,7 +13,7 @@ class Otliv extends WorkPlace {
     const {state: {full_picture}, editor: {project}} = this;
     const {cnstr, ox} = bar;
     console.log(bar)
-    project.load(ox, {auto_lines: false, custom_lines: true, unfolding: true, redraw: true})
+    project.load(ox, {auto_lines: false, custom_lines: true, unfolding: !full_picture, redraw: true})
       .then(() => {
         // if(full_picture) return;
         clearTimeout(project._attr._vis_timer);
@@ -26,10 +26,10 @@ class Otliv extends WorkPlace {
     const {state: {full_picture, ox}, props: {classes}} = this;
     const comment = ox.calc_order_row?.note || '';
     return <WorkPlaceFrame>
-      <Grid item sm={12} md={full_picture ? 9 : 8} className={classes.workplace}>
+      <Grid item sm={12} md={full_picture ? 7 : 8} className={classes.workplace}>
         <Builder registerChild={this.registerEditor}/>
       </Grid>
-      <Grid item sm={12} md={full_picture ? 3 : 4} className={classes.props}>
+      <Grid item sm={12} md={full_picture ? 5 : 4} className={classes.props}>
         <Props {...this.state} style={{marginTop:'1em'}} show_spec={false} changeFull={this.changeFull}/>
         {ox && ox.empty && !ox.empty() ? <Params {...this.state}/> : null}
         {comment ? <div style={{marginTop:'1.5em'}}>⚠️ Коммент: {comment}</div> : null}

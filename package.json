@@ -20,10 +20,9 @@
   ],
   "author": "Evgeniy Malyarov <info@oknosoft.ru> (http://www.oknosoft.ru)",
   "license": "SEE LICENSE IN LICENSE",
-  "proxy": "https://startokna-dev.oknagc.ru/",
   "proxy1": "http://localhost:3016/",
   "proxy2": "https://paperless.ecookna.ru/",
-  "proxy3": "https://eco-paperless.oknosoft.ru/",
+  "proxy": "https://eco-paperless.oknosoft.ru/",
   "proxy4": "https://develop.ecookna.ru/",
   "dependencies": {
     "md5-file": "^5.0",
